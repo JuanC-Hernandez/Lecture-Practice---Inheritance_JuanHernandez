@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace Lecture_Practice___Inheritance_JuanHernandez
 {
-    internal class Vehicle
+    internal class Plane : Air
     {
-        // Field
-        string _color;
-
-        // Properties
-        public string Color { get => _color; set => _color = value; }
-
+        // Fields
+        int _numberOfJets;
         // Constructor
-        public Vehicle(string color)
+        public Plane(string color, int numberofjets) : base(color)
         {
-            Color = color;
+            _numberOfJets = numberofjets;
         }
-        // Overide
+        // Override To String
         public override string ToString()
         {
-            return this.GetType() + $" {Color}";
+            return base.ToString() + $" - Number of Jets {_numberOfJets}";
         }
     }
 }
